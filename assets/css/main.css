@@ -1,0 +1,32 @@
+:root{
+    --navbar-height: 80px; 
+    --footer-height: 120px;
+
+    /* font-size */
+    --p48: 3rem; 
+    --p32: 2rem;
+    --p24: 1.5rem;
+    --p20: 1.3rem;
+    --p16: 1rem;
+
+    /* color */
+    --grn: #256100;
+    --red: #FF0000;
+    --wht: #FFFFFF;
+    --blk: #000000;
+    --light-grn: #CADBCD;
+    --yel-grn: #D8F9AF;
+    --dark-gry: #525252;
+    --light-gry: #474747;
+
+
+    /* font-weight */
+    --strong: 900;
+    --bold: 700;
+    --light-bold: 600;
+    
+
+
+
+
+}
