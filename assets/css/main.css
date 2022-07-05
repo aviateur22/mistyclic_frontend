@@ -15,6 +15,7 @@
     --wht: #FFFFFF;
     --blk: #000000;
     --light-grn: #CADBCD;
+    --flash-grn: #00B432; 
     --yel-grn: #D8F9AF;
     --dark-gry: #525252;
     --light-gry: #474747;
@@ -24,9 +25,8 @@
     --strong: 900;
     --bold: 700;
     --light-bold: 600;
-    
-
-
-
-
 }
+
+*{    
+    box-sizing: border-box; 
+}  

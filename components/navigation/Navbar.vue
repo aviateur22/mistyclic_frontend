@@ -5,7 +5,9 @@
 
     <!-- titre + image -->
     <section class="nav__title-section">
-      <img src="~/assets/image/icone.png" alt="image d'une poignée entre 2 mains">
+      <nuxt-link to="/">
+        <img src="~/assets/image/icone.png" alt="image d'une poignée entre 2 mains">
+      </nuxt-link>     
       <h1 class="nav__title">
         mistyclic
       </h1>
@@ -16,7 +18,17 @@
       <ul class="nav__list">
         <li class="nav__mobile-li">
           <nuxt-link class="nav__mobile-link" to="/login">
-            connexion | s'inscrire
+            connexion
+          </nuxt-link>            
+        </li>
+        <li class="nav__mobile-li">
+          <nuxt-link class="nav__mobile-link" to="/login">
+            inscription
+          </nuxt-link>            
+        </li>
+        <li class="nav__mobile-li">
+          <nuxt-link class="nav__mobile-link" to="/login">
+            mon compte
           </nuxt-link>            
         </li>
         <li class="nav__mobile-li">
@@ -25,8 +37,13 @@
           </nuxt-link>            
         </li>
         <li class="nav__mobile-li">
-          <nuxt-link class="nav__mobile-link" to="/login">
+          <nuxt-link class="nav__mobile-link" to="/CreateOffer">
             offre
+          </nuxt-link>            
+        </li>
+        <li class="nav__mobile-li">
+          <nuxt-link class="nav__mobile-link" to="/CreateOffer">
+            nouvelle offre
           </nuxt-link>            
         </li>
       </ul>
@@ -67,10 +84,16 @@ export default {
     },
     methods: {
         /**
-         * 
+         * gestion affichage menu mobile
          */
         toggleNavbarMobile(){
             this.displayNavbarMobile = !this.displayNavbarMobile;
+
+            if(this.displayNavbarMobile){
+                this.displayMobileButton = false;
+            } else {
+                this.displayMobileButton = true;
+            }
         },
 
         /**
@@ -89,20 +112,25 @@ export default {
 </script>
 
 <style scoped>
+
   .nav{
-    width: 100%;
     height: var(--navbar-height);
     display: flex;
     width: 100%;
     justify-content: space-between;    
-    align-items: center;
-    padding: 0.5em 0em;
+    align-items: center;    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 1px -2px;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    background: var(--wht);
   }
 
+  /* logo + titre */
   .nav__title-section{
     display: flex;
     align-items: center;
-    padding: 1em;
+    padding: 0.5em;
   }
 
   nav h1{
@@ -110,21 +138,30 @@ export default {
     font-size: var(--p32);
     font-weight: var(--bold); 
     text-transform: uppercase;   
-    padding-left: 0.5em
+    padding-left: 0.2em
 
   }
   section img{
-    height: var(--navbar-height)
+    padding: 0.2em;
+    height: 65px
   }
 
-  .nav__title{
-    font-size: var(--p48);
+  /* navigation */
+  .nav__item-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-right: 2em;
   }
 
   section ul{
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  /* burger menu  */
   .nav__button-mobile{
     display: flex;
     padding-right: 1em;
@@ -151,19 +188,22 @@ export default {
   @media screen and (min-width: 768px) {
     nav h1{
       font-size: var(--p48);
+      padding-left: 0.5em;
     }
 
     .nav__mobile-li{
-      margin: 2em 0em;
-      width: 100%;
       text-align: center;
+      height: 100%;
+      display: flex;
     }
 
     .nav__mobile-link{
       text-transform: uppercase;
       text-decoration: none; 
       font-weight: var(--light-bold);
-      color: var(--blk)
+      color: var(--blk);
+      padding: 1em;
+      width: auto;
     }    
   }
 </style>

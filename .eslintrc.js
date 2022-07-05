@@ -49,5 +49,6 @@ module.exports = {
         'comma-dangle': 'off',
         'vue/multi-word-component-names': 0,
         'vue/require-prop-types': 'off',
+        'vue/attribute-hyphenation': ['off', 'never']
     }
 };
