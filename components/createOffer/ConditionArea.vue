@@ -11,15 +11,28 @@
 <script>
 import Checkbox from '../common/Checkbox.vue';
 export default {
-  components: { Checkbox },
+    components: { Checkbox },
     props: ['conditions'],
     created(){
-        console.log(this.conditions)
+        console.log(this.conditions);
     }
 
 };
 </script>
 
-<style>
+<style scoped>
+.condition__text{
+  padding-bottom: 1em;
+}
 
+.condition__text::first-letter{
+  text-transform: capitalize;
+}
+
+@media screen and (min-width:768px) {
+  .condition__text{
+    font-size: var(--p20);
+  }
+  
+}
 </style>

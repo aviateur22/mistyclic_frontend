@@ -5,12 +5,14 @@
 
     <!-- titre + image -->
     <section class="nav__title-section">
-      <nuxt-link to="/">
-        <img src="~/assets/image/icone.png" alt="image d'une poignée entre 2 mains">
-      </nuxt-link>     
-      <h1 class="nav__title">
-        mistyclic
-      </h1>
+      <nuxt-link class="nav__mobile-link" to="/">
+        <div class="nav__title-container">
+          <img src="~/assets/image/icone.png" alt="image d'une poignée entre 2 mains">
+          <h1 class="nav__title">
+            mistyclic
+          </h1>
+        </div>        
+      </nuxt-link>           
     </section>
 
     <!--  navigation -->
@@ -30,20 +32,21 @@
           <nuxt-link class="nav__mobile-link" to="/login">
             mon compte
           </nuxt-link>            
-        </li>
+        </li>       
         <li class="nav__mobile-li">
-          <nuxt-link class="nav__mobile-link" to="/login">
+          <nuxt-link class="nav__mobile-link" to="/offer/create">
+            nouvelle offre
+          </nuxt-link>            
+        </li>
+        <!--  link professionnel -->
+        <li class="nav__mobile-li">
+          <nuxt-link class="nav__mobile-link" to="/store/create">
             commerce
           </nuxt-link>            
         </li>
         <li class="nav__mobile-li">
-          <nuxt-link class="nav__mobile-link" to="/CreateOffer">
+          <nuxt-link class="nav__mobile-link" to="/offer/create">
             offre
-          </nuxt-link>            
-        </li>
-        <li class="nav__mobile-li">
-          <nuxt-link class="nav__mobile-link" to="/CreateOffer">
-            nouvelle offre
           </nuxt-link>            
         </li>
       </ul>
@@ -141,9 +144,15 @@ export default {
     padding-left: 0.2em
 
   }
+
   section img{
     padding: 0.2em;
     height: 65px
+  }
+
+  .nav__title-container{
+    display: flex;
+    align-items: center;
   }
 
   /* navigation */

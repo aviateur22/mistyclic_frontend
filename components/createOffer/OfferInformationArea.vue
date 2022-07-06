@@ -24,7 +24,7 @@
 <script>
 import InputText from '../common/InputText.vue';
 export default {
-  components: { InputText },  
+    components: { InputText }
 
 };
 </script>

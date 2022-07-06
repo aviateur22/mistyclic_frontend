@@ -1,25 +1,37 @@
 <template>
   <article class="offer">
-    <header class="header">
+    <header class="offer__header">
       <page-title :text="'mon offre'" />
     </header>
-    <main class="main">     
+    <main class="offer__main">     
       <!-- renseignement offre -->
-      <section>
+      <section class="aera--space">
         <offer-information-area />
       </section> 
 
       <!-- conditions -->
-      <section>
-        <condition-area :conditions="conditions" />
+      <section class="aera--space">
+        <!-- checkbox -->
+        <condition-area :conditions="conditions" />        
+      </section>
+
+      <!-- info supp -->
+      <section class="aera--space">       
+        <!-- textaera -->
+        <text-area :text="'informations supplémentaires sur l\'offre'" />
+      </section>
+
+      <!-- image -->
+      <section class="aera--space">
+        <upload-image :name="'image'" :text="'ajouter une photo'" />
       </section>
 
       <!-- prix de l'offre -->
-      <section>
+      <section class="aera--space">
         <price-area />
       </section>
     </main>
-    <footer class="footer">
+    <footer class="offer__footer">
       <button-aera />
     </footer>
   </article>
@@ -27,13 +39,15 @@
 
 <script>
 import PageTitle from '~/components/common/PageTitle.vue';
+import TextArea from '~/components/common/TextArea.vue';
+import UploadImage from '~/components/common/UploadImage.vue';
 import ButtonAera from '~/components/createOffer/ButtonAera.vue';
 import ConditionArea from '~/components/createOffer/ConditionArea.vue';
 import OfferInformationArea from '~/components/createOffer/OfferInformationArea.vue';
 import PriceArea from '~/components/createOffer/PriceArea.vue';
 export default {
-    components: { ConditionArea, OfferInformationArea, ButtonAera, PriceArea, PageTitle},
-    data() {        
+    components: { ConditionArea, OfferInformationArea, ButtonAera, PriceArea, PageTitle, TextArea, UploadImage },
+    data() {
         return {
             //conditions de l'offre
             conditions: [
@@ -78,9 +92,10 @@ export default {
     padding: 2em 1em;
   }
 
-  .offer .footer{
-    padding: 1.5em 1em;
+  .offer__footer{    
+    width: 100%;
     background: var(--wht);
+    padding: 2em 1em;
   }
 
 </style>

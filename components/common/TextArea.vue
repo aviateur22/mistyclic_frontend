@@ -3,7 +3,7 @@
     <label :for="name" class="input__label">
       {{ text }}
     </label>
-    <text-area type="text" name="message" :placeholder="placeHolder" :required="required" />
+    <textarea type="text" name="message" class="input__text text--area" :placeholder="placeHolder" :required="required" />
   </div>
 </template>
 
@@ -15,5 +15,11 @@ export default {
 </script>
 
 <style scoped>
-
+  .input{
+    display: flex;
+    flex-direction: column;
+  }
+  .text--area{
+    height: 200px; 
+  }
 </style>

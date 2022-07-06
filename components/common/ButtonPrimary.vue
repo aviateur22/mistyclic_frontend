@@ -24,7 +24,7 @@ export default {
         font-weight: var(--bold);
         width: 100%;
         border: 1px solid var(--flash-grn);
-        padding: 0.2em 0em;
+        padding: 0.3em 0em;
         margin: 0.2em 0em;
         cursor: pointer;
     }

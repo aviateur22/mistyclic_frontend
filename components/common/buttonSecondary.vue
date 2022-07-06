@@ -23,7 +23,7 @@ export default {
         font-size: var(--p20);
         font-weight: var(--light-bold);
         width: 100%;
-        padding: 0.3em 0em;
+        padding: 0.2em 0em;
         margin: 0.2em 0em;
         cursor: pointer;
     }
