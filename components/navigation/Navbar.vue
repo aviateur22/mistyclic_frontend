@@ -155,6 +155,15 @@ export default {
     align-items: center;
   }
 
+  .nav__mobile-link{
+      text-transform: uppercase;
+      text-decoration: none; 
+      font-weight: var(--light-bold);
+      color: var(--blk);
+      padding: 1em;
+      width: auto;
+    }    
+
   /* navigation */
   .nav__item-section{
     display: flex;
@@ -205,14 +214,5 @@ export default {
       height: 100%;
       display: flex;
     }
-
-    .nav__mobile-link{
-      text-transform: uppercase;
-      text-decoration: none; 
-      font-weight: var(--light-bold);
-      color: var(--blk);
-      padding: 1em;
-      width: auto;
-    }    
   }
 </style>

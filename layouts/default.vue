@@ -24,7 +24,6 @@ export default {
 <style scoped>
   *{
     font-family: 'raleway',"sans-serif";
-
   }
   .main__container{
     min-height: 100vh;

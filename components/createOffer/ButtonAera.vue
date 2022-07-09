@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import ButtonPrimary from '../common/ButtonPrimary.vue';
-import ButtonSecondary from '../common/buttonSecondary.vue';
+import ButtonPrimary from '../form/ButtonPrimary.vue';
+import ButtonSecondary from '../form/buttonSecondary.vue';
 export default {
     components: { ButtonPrimary, ButtonSecondary },
 };

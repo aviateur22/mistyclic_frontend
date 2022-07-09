@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import InputText from '../common/InputText.vue';
+import InputText from '../form/InputText.vue';
 export default {
     components: { InputText }
 

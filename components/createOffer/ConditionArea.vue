@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Checkbox from '../common/Checkbox.vue';
+import Checkbox from '../form/Checkbox.vue';
 export default {
     components: { Checkbox },
     props: ['conditions'],

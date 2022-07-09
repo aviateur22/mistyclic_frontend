@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Offer from './offer/Offer.vue';
+import Offer from './Offer.vue';
 export default {
     components: { Offer},
     props: ['offers']

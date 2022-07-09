@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import PageTitle from '~/components/common/PageTitle.vue';
-import TextArea from '~/components/common/TextArea.vue';
-import UploadImage from '~/components/common/UploadImage.vue';
+import PageTitle from '~/components/form/PageTitle.vue';
+import TextArea from '~/components/form/TextArea.vue';
+import UploadImage from '~/components/form/UploadImage.vue';
 import ButtonAera from '~/components/createOffer/ButtonAera.vue';
 import ConditionArea from '~/components/createOffer/ConditionArea.vue';
 import OfferInformationArea from '~/components/createOffer/OfferInformationArea.vue';

@@ -20,11 +20,13 @@
     --dark-gry: #525252;
     --light-gry: #474747;
 
-
     /* font-weight */
     --strong: 900;
     --bold: 700;
     --light-bold: 600;
+
+    /* temps */
+    --t3ms: 0.3s
 }
 
 *{    
@@ -55,6 +57,26 @@
 
   .input__label::first-letter{
     text-transform: capitalize; 
+  }
+
+  /* filtre offre */
+  .filter{
+    padding: 1em;
+  }
+
+  .filter__type-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0.5em;
+    text-transform: uppercase;
+    background: var(--wht);
+    margin: 1em 0.2em;
+    font-weight: var(--light-bold);    
+  }
+
+  .filter__name{
+    width: 100%;
   }
 
   @media screen and (min-width: 768px) {
