@@ -3,7 +3,7 @@
   <article class="offer" @click="displayOffer">     
     <header>
       <!-- l'image de l'offre -->
-      <HomeOfferComponentsImage :image="offer.image" />
+      <HomeOfferImage :image="offer.image" />
     </header>
     <main class="offer__main">          
       <!-- nom du commerce -->
@@ -11,7 +11,7 @@
       <!-- type de commerce -->
       <HomeOfferComponentsStoreType :storetype="offer.type" />
       <!-- titre de l'offre -->
-      <HomeOfferComponentsTitle :title="offer.title" />
+      <HomeOfferTitle :title="offer.title" />
       <!-- remboursement -->
       <HomeOfferComponentsRefundPrice :refund="offer.refund" />
       <!-- bouton recherche offre commerce -->      
@@ -29,8 +29,8 @@ export default {
          */
         displayOffer(){
             this.$router.push({
-                name: 'offer-id',
-                params: { id: this.offer.slug }
+                name: 'offer-slug',
+                params: { slug: this.offer.slug }
             });
         }
     }

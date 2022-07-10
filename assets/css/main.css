@@ -24,6 +24,7 @@
     --strong: 900;
     --bold: 700;
     --light-bold: 600;
+    --normal: 500;
 
     /* temps */
     --t3ms: 0.3s
@@ -79,12 +80,30 @@
     width: 100%;
   }
 
+  /* detail d'une offre */
+  .detail--text{
+    font-size: var(--p16);
+  }
+
+  .title--header{
+    font-weight: var(--bold);
+    padding-bottom: 0.5em;
+  }
+
+  .title--header::first-letter{
+    text-transform: uppercase;
+  }
+
   @media screen and (min-width: 768px) {
     .input__label{ 
       font-size: var(--p20);
     }
 
     .input__text{
+      font-size: var(--p20);
+    }
+
+    .detail--text{
       font-size: var(--p20);
     }
   }

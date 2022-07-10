@@ -1,5 +1,6 @@
 <template>
-  <OfferDetailOffer />
+  <!-- contenu de l'offre -->
+  <Offer />
 </template>
 
 <script>

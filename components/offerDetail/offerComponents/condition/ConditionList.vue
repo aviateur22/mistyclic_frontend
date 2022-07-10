@@ -1,11 +1,16 @@
 <template>
   <!-- liste des conditions -->
   <article class="condition">
-    <header class="condition__header">
-      <p>conditions</p>
+    <header class="title--header">
+      <p class="detail--text">
+        conditions
+      </p>
     </header>
+    <!-- boucle sur les conditions de disponible -->
     <main class="condition__main">
-      <OfferDetailOfferComponentsConditionConditions v-for="(condition) in conditions" :key="condition.id" :condition="condition.text" />
+      <ul class="condition__list">
+        <OfferDetailOfferComponentsCondition v-for="(condition) in conditions" :key="condition.id" :condition="condition.text" class="condition__list" />
+      </ul>      
     </main>
   </article>
 </template>
@@ -16,6 +21,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 </style>

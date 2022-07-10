@@ -125,7 +125,7 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 1px -2px;
     position: fixed;
     top: 0px;
-    z-index: 1;
+    z-index: 2;
     background: var(--wht);
   }
 

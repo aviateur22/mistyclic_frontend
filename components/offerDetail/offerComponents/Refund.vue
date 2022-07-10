@@ -1,10 +1,10 @@
 <template>
   <!-- remboursement de l'offre -->
   <article class="refund">
-    <header class="refund__header">
+    <header class="title--header detail--text">
       <p>Remboursement immédiat</p>
     </header>
-    <main class="refund__main">
+    <main class="refund__main detail--text">
       <p>
         {{ refund }} €
       </p>
