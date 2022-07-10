@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import buttonSecondary from './buttonSecondary.vue';
+import buttonSecondary from '../common/ButtonSecondary.vue';
 export default {
     components: { buttonSecondary },
     props: ['name', 'text'],

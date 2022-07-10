@@ -3,32 +3,25 @@
   <article class="offer" @click="displayOffer">     
     <header>
       <!-- l'image de l'offre -->
-      <OfferImage :image="offer.image" />
+      <HomeOfferComponentsImage :image="offer.image" />
     </header>
     <main class="offer__main">          
       <!-- nom du commerce -->
-      <store-name :name="offer.name" />
+      <HomeOfferComponentsStoreName :name="offer.storeName" />
       <!-- type de commerce -->
-      <store-type :storetype="offer.type" />
+      <HomeOfferComponentsStoreType :storetype="offer.type" />
       <!-- titre de l'offre -->
-      <Title :title="offer.title" />
+      <HomeOfferComponentsTitle :title="offer.title" />
       <!-- remboursement -->
-      <refund-price :refund="offer.refund" />
-      <!-- bouton recherche offre commerce -->
-      <store-offers-button /> 
+      <HomeOfferComponentsRefundPrice :refund="offer.refund" />
+      <!-- bouton recherche offre commerce -->      
+      <CommonButtonOfferFilterByStore />
     </main>
   </article>
 </template>
 
 <script>
-import OfferImage from '~/components/home/offerComponents/Image.vue';
-import RefundPrice from '~/components/home/offerComponents/RefundPrice.vue';
-import StoreName from '~/components/home/offerComponents/StoreName.vue';
-import StoreOffersButton from '~/components/home/offerComponents/StoreOffersButton.vue';
-import StoreType from '~/components/home/offerComponents/StoreType.vue';
-import Title from '~/components/home/offerComponents/OfferTitle.vue';
 export default {
-    components: { Title, StoreName, StoreOffersButton, StoreType, RefundPrice, OfferImage },    
     props: ['offer'],    
     methods: {
         /**

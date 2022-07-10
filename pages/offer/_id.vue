@@ -1,5 +1,5 @@
 <template>
-  <h2>offre en détail</h2>
+  <OfferDetailOffer />
 </template>
 
 <script>

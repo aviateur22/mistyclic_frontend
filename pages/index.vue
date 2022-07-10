@@ -2,21 +2,19 @@
   <article class="home">
     <!-- filtre des offres -->
     <header>
-      <filter-offer />
+      <HomeFilterOffer />
     </header>
     <!-- les offres -->
     <main>
-      <offer-list class="home__offer" :offers="offers" />
+      <HomeOfferList class="home__offer" :offers="offers" />
     </main>
   </article>
 </template>
 
 <script>
-import FilterOffer from '~/components/filterOffer/FilterOffer.vue';
-import OfferList from '~/components/home/offerList/OfferList.vue';
 export default {
     name: 'IndexPage',
-    components: { OfferList, FilterOffer },    
+    components: { },    
     layout: 'default',
     data(){
         return {
@@ -24,7 +22,7 @@ export default {
             offers: [
                 {
                     id: 1,
-                    name: 'chez poupilles',
+                    storeName: 'chez poupilles',
                     title: 'mon bouquet de fleur',
                     image: 'https://raw.githubusercontent.com/aviateur22/picture_lesson/main/bouquet.png',
                     type: 'fleuriste',
@@ -33,7 +31,7 @@ export default {
                 },
                 {
                     id: 2,
-                    name: 'autant en opporte le vent',
+                    storeName: 'autant en opporte le vent',
                     title: '2 belles baguettes',
                     image: 'https://raw.githubusercontent.com/aviateur22/picture_lesson/main/baguette.jpg',
                     type: 'boulangerie',
@@ -42,7 +40,7 @@ export default {
                 },
                 {
                     id: 3,
-                    name: 'Loreil',
+                    storeName: 'Loreil',
                     title: '2 chocolatines',
                     image: 'https://raw.githubusercontent.com/aviateur22/picture_lesson/main/chocolatine.jpg',
                     type: 'boucherie',
@@ -51,7 +49,7 @@ export default {
                 },
                 {
                     id: 4,
-                    name: 'Bernat',
+                    storeName: 'Bernat',
                     title: '4 steacks hachés',
                     image: 'https://raw.githubusercontent.com/aviateur22/picture_lesson/main/steak%20hach%C3%A9.jpg',
                     type: 'boucherie',

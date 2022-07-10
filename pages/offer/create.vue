@@ -1,52 +1,46 @@
 <template>
   <article class="offer">
     <header class="offer__header">
-      <page-title :text="'mon offre'" />
+      <FormPageTitle :text="'mon offre'" />
     </header>
     <main class="offer__main">     
       <!-- renseignement offre -->
       <section class="aera--space">
-        <offer-information-area />
+        <CreateOfferInformationArea />
       </section> 
 
       <!-- conditions -->
       <section class="aera--space">
         <!-- checkbox -->
-        <condition-area :conditions="conditions" />        
+        <CreateOfferConditionArea :conditions="conditions" />        
       </section>
 
       <!-- info supp -->
       <section class="aera--space">       
         <!-- textaera -->
-        <text-area :text="'informations supplémentaires sur l\'offre'" />
+        <FormTextArea :text="'informations supplémentaires sur l\'offre'" />
       </section>
 
       <!-- image -->
       <section class="aera--space">
-        <upload-image :name="'image'" :text="'ajouter une photo'" />
+        <FormUploadImage :name="'image'" :text="'ajouter une photo'" />
       </section>
 
       <!-- prix de l'offre -->
       <section class="aera--space">
-        <price-area />
+        <CreateOfferPriceArea />
       </section>
     </main>
     <footer class="offer__footer">
-      <button-aera />
+      <!-- boutton soumission formulaire -->
+      <CommonButtonAera />
     </footer>
   </article>
 </template>
 
 <script>
-import PageTitle from '~/components/form/PageTitle.vue';
-import TextArea from '~/components/form/TextArea.vue';
-import UploadImage from '~/components/form/UploadImage.vue';
-import ButtonAera from '~/components/createOffer/ButtonAera.vue';
-import ConditionArea from '~/components/createOffer/ConditionArea.vue';
-import OfferInformationArea from '~/components/createOffer/OfferInformationArea.vue';
-import PriceArea from '~/components/createOffer/PriceArea.vue';
 export default {
-    components: { ConditionArea, OfferInformationArea, ButtonAera, PriceArea, PageTitle, TextArea, UploadImage },
+    components: { },
     data() {
         return {
             //conditions de l'offre
