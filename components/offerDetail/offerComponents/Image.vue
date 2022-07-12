@@ -14,13 +14,14 @@ export default {
 <style scoped>
   .image{
     width: 100%;
+    height: 500px;
   }
 
   .image__img{
-    width: 100%;
-    height: 100%;
-    object-position: center center;  
-    object-fit: cover;  
+    width: 100%;        
+    object-fit: cover;
+    height: 500px;
+
   }
 
   @media screen and (min-width:768px) {    

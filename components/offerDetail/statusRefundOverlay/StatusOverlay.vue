@@ -1,5 +1,6 @@
 <template>
   <div class="overlay">
+    <!-- gestion message sur le status du remboursement -->
     <article class="overlay__outer">   
       <header>
         <OfferDetailStatusRefundOverlayComponentsTitle :code="code" :refund="refund" />

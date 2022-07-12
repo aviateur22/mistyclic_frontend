@@ -3,7 +3,7 @@
   <article>
     <main>
       <!-- génération d'un code de remboursement -->
-      <OfferDetailOfferComponentsButtonGenerateRefundCode class="aera--space" />
+      <OfferDetailOfferComponentsButtonGenerateRefundCode @setRefundOverlayVisibility="setRefundOverlayVisibility" class="aera--space" />
 
       <!-- voir les offres de ce commerce -->
       <OfferDetailOfferComponentsButtonOfferByStore />
@@ -13,8 +13,15 @@
 
 <script>
 export default {
-
-}
+    methods: {
+        /**
+         * affichage code de remboursement
+         */
+        setRefundOverlayVisibility(value){
+            this.$emit('setRefundOverlayVisibility', value);
+        }
+    }
+};
 </script>
 
 <style>

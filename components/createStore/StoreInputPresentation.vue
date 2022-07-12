@@ -2,7 +2,7 @@
   <!-- renseignement sur le commerce -->
   <article>
     <main class="main">     
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'chez poupille'"
         :name="'name'"
         :type="'text'"         
@@ -10,7 +10,7 @@
         :requires="true"
       />
 
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'Séléctionnez un type de commerce'"
         :name="'type'"
         :type="'text'"         
@@ -18,7 +18,7 @@
         :requires="true"
       />
 
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'32 bis des chemins du vercor'"
         :name="'adress'"
         :type="'text'"         
@@ -26,7 +26,7 @@
         :requires="true"
       />
 
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'Auterive'"
         :name="'type'"
         :type="'text'"         
@@ -34,7 +34,7 @@
         :requires="true"
       />
 
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'31190'"
         :name="'type'"
         :type="'text'"         
@@ -46,10 +46,7 @@
 </template>
 
 <script>
-import InputText from '../form/InputText.vue';
 export default {
-    components: { InputText }
-
 };
 </script>
 

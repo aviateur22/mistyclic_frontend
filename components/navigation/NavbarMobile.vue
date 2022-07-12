@@ -19,27 +19,27 @@
         <section class="nav__mobile-items">
           <ul class="nav__mobile-list">
             <li class="nav__mobile-li">
-              <nuxt-link class="nav__mobile-link" to="/login">
+              <nuxt-link class="nav__mobile-link" to="/login" @click.native="toggleNavbarMobile">
                 connexion
               </nuxt-link>            
             </li>
             <li class="nav__mobile-li">
-              <nuxt-link class="nav__mobile-link" to="/login">
+              <nuxt-link class="nav__mobile-link" to="/register/Client" @click.native="toggleNavbarMobile">
                 inscription
               </nuxt-link>            
             </li>
             <li class="nav__mobile-li">
-              <nuxt-link class="nav__mobile-link" to="/login">
+              <nuxt-link class="nav__mobile-link" to="/login" @click.native="toggleNavbarMobile">
                 mon compte
               </nuxt-link>            
             </li>
             <li class="nav__mobile-li">
-              <nuxt-link class="nav__mobile-link" to="/login">
+              <nuxt-link class="nav__mobile-link" to="/login" @click.native="toggleNavbarMobile">
                 commerce
               </nuxt-link>   
             </li>         
             <li class="nav__mobile-li">
-              <nuxt-link class="nav__mobile-link" to="/login">
+              <nuxt-link class="nav__mobile-link" to="/offer" @click.native="toggleNavbarMobile">
                 offre
               </nuxt-link>            
             </li>
@@ -59,10 +59,10 @@ export default {
     },
     methods: {
         /**
-         * affiche ou masque nabar mobile
+         * affiche ou masque navbar mobile
          */
         toggleNavbarMobile(){
-            this.$emit('toggleNavbarMobile');            
+            this.$emit('toggleNavbarMobile');  
         }
       
     }
@@ -92,22 +92,26 @@ export default {
     background: transparent;
     border: 0px;
     cursor: pointer;
-    width: 50px;
+    width: 40px;
   }
 
+  /* image */
   nav svg{
     width: 100%;
   }
 
-  /* image */
+  /* image container*/
   .nav__mobile-title{
-    margin-top: 50px;
+    margin-top: 10px;
     height: 300px;
     max-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav__mobile-title img{
-    width: 100%;
+    width: 60%;
   }
 
   /* div exterieur */
@@ -145,5 +149,29 @@ export default {
     font-weight: var(--light-bold);
     color: var(--blk);
     cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) {
+    /* biuton fermetur */
+    .nav__mobile-close-btn{
+      right: 25px;
+      width: 50px;
+    }
+    /* image conatiner*/
+    .nav__mobile-title{
+      margin-top: 50px;
+      height: 600px;
+      max-width: 400px;
+    }
+
+    /* imgae */
+    .nav__mobile-title img{
+      width: 100%;
+    }
+
+    /* nav-link */
+    .nav__mobile-link{
+      font-size: var(--p20);
+    }
   }
 </style>

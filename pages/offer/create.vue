@@ -1,95 +1,67 @@
 <template>
-  <article class="offer">
-    <header class="offer__header">
-      <FormPageTitle :text="'mon offre'" />
-    </header>
-    <main class="offer__main">     
+  <section class="form">
+    <!-- formulaire de connexion -->
+    <Form :title="'mon offre'" :confirmButtonText="'valider'" :cancelButtonText="'annuler'" @clickAction="clickAction">
       <!-- renseignement offre -->
-      <section class="aera--space">
-        <CreateOfferInformationArea />
-      </section> 
+      <CreateOfferInformationArea class="aera--space" />
 
       <!-- conditions -->
-      <section class="aera--space">
-        <!-- checkbox -->
-        <CreateOfferConditionArea :conditions="conditions" />        
-      </section>
+      <CreateOfferConditionArea class="aera--space" :conditions="conditions" />       
 
-      <!-- info supp -->
-      <section class="aera--space">       
-        <!-- textaera -->
-        <FormTextArea :text="'informations supplémentaires sur l\'offre'" />
-      </section>
+      <!-- info supp textarea-->      
+      <FormFormComponentsTextArea class="aera--space" :text="'informations supplémentaires sur l\'offre'" />
 
       <!-- image -->
-      <section class="aera--space">
-        <FormUploadImage :name="'image'" :text="'ajouter une photo'" />
-      </section>
+      <FormFormComponentsUploadImage class="aera--space" :name="'image'" :text="'ajouter une photo'" />
 
       <!-- prix de l'offre -->
-      <section class="aera--space">
-        <CreateOfferPriceArea />
-      </section>
-    </main>
-    <footer class="offer__footer">
-      <!-- boutton soumission formulaire -->
-      <CommonButtonAera />
-    </footer>
-  </article>
+      <CreateOfferPriceArea class="aera--space" />
+    </Form>
+  </section>  
 </template>
 
 <script>
 export default {
-    components: { },
     data() {
         return {
-            //conditions de l'offre
             conditions: [
                 {
                     id: 1,
-                    text: 'non cumulable avec d\'autres offres'
+                    text: 'Non cumulable avec d’autre offre'
                 },
                 {
                     id: 2,
-                    text: 'à retirer sur place'
+                    text: 'A retirer sur place'
                 },
                 {
                     id: 3,
-                    text: 'à réserver'
+                    text: 'A réserver'
                 },
                 {
                     id: 4,
-                    text: 'fonction de la diponibilité du jour'
+                    text: 'En fonction de la disponibilité du jour'
                 },
             ]
         };
+    },
+    methods: {
+    /**
+     * connexion au compte
+     */
+        clickAction(data){
+            console.log(Object.fromEntries(data.entries()));            
+        }
     }
+
 };
 </script>
 
 <style scoped>
-
-  .offer{
-    width: 100%;
-    background: var(--grn);  
-    max-width: 768px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
-  }
-  
-  .offer main{
-    width: 100%;
-    border-radius: 15px 15px 0px 0px;
-    background: var(--wht);
-    padding: 2em 1em;
-  }
-
-  .offer__footer{    
-    width: 100%;
-    background: var(--wht);
-    padding: 2em 1em;
-  }
+.form{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
 
 </style>

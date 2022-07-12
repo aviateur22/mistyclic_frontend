@@ -11,7 +11,7 @@
       </option>
       <!-- liste en fonction de ce que renseigne l'ituluisateur -->
       <option v-for="(item) in items" :key="item.id" :name="name">
-        {{ element.name }}
+        {{ item.name }}
       </option>        
     </select>
   </article>
@@ -19,11 +19,11 @@
 
 <script>
 export default {
-    props: ['items'],
+    props: ['items', 'name', 'introProposal', 'text'],
     data(){
         return {
             //item de selectionné
-            selectedItem: null
+            selectedItem: undefined
         };
     }
 

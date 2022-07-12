@@ -24,7 +24,7 @@
           </nuxt-link>            
         </li>
         <li class="nav__mobile-li">
-          <nuxt-link class="nav__mobile-link" to="/login">
+          <nuxt-link class="nav__mobile-link" to="/register/Client">
             inscription
           </nuxt-link>            
         </li>

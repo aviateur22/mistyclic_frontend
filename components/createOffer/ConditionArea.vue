@@ -4,14 +4,12 @@
     <p class="condition__text">
       conditions de récupération
     </p>
-    <checkbox v-for="(condition, i) in conditions" :key="i" :name="i" :text="condition.text" />
+    <FormFormComponentsCheckbox v-for="(condition, i) in conditions" :key="i" :name="i" :text="condition.text" />
   </div>
 </template>
 
 <script>
-import Checkbox from '../form/Checkbox.vue';
 export default {
-    components: { Checkbox },
     props: ['conditions'],
     created(){
         console.log(this.conditions);

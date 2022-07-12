@@ -1,6 +1,6 @@
 <template>
   <article>
-    <input-text 
+    <FormFormComponentsInputText
       :placeHolder="'150'"
       :name="'commission'"
       :type="'number'"         
@@ -8,7 +8,7 @@
       :requires="true"
     />
 
-    <input-text
+    <FormFormComponentsInputText
       :placeHolder="'1'"
       :name="'tva'"
       :type="'number'"         
@@ -16,7 +16,7 @@
       :requires="true" 
     />
 
-    <input-text
+    <FormFormComponentsInputText
       :placeHolder="'1'"
       :name="'totalPrice'"
       :type="'number'"         
@@ -27,9 +27,7 @@
 </template>
 
 <script>
-import InputText from '../form/InputText.vue';
 export default {
-    components: { InputText }
 };
 </script>
 

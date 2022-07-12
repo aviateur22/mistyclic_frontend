@@ -9,7 +9,7 @@
       <!-- image -->
       <OfferDetailOfferComponentsImage :imagePath="offer.image" />
       <!-- bouton acces commerce -->
-      <CommonButtonSecondary class="offer__button-store" :text="offer.name" :isRed="false" />
+      <CommonButtonSecondary class="offer__button-store" :text="offer.name" :isRed="false" @click.native="store" />
     </header>
     <main class="offer__main">
       <!-- description de l'offre -->
@@ -21,7 +21,7 @@
     </main>
     <footer class="offer__footer">
       <!-- button générer code + offres du commerce -->
-      <OfferDetailOfferComponentsButtonArea @click.native="refundOverlayVisibility = !refundOverlayVisibility" />
+      <OfferDetailOfferComponentsButtonArea @setRefundOverlayVisibility="toggleStatusRefundOverlay" />
     </footer>
   </article>
 </template>
@@ -55,10 +55,12 @@ export default {
                     }
                 ],
                 informations: '',
-                storeId: {
-                    id: 1
+                store: {
+                    id: 1,
+                    slug: 'chez-Poupile-01'
                 }
             },
+            actualUrl: this.$route.path,
             //affichage overlay code de remboursement
             refundOverlayVisibility: false          
         };
@@ -74,14 +76,24 @@ export default {
         /**
          * modification état remboursement overlay
          */
-        toggleStatusRefundOverlay(){
-            this.refundStatusOverlayVisibility = !this.refundStatusOverlayVisibility;
-
-            if(this.refundStatusOverlayVisibility){
-                this.refundOverlayVisibility = false;
-            } else {
+        toggleStatusRefundOverlay(value){
+            //etat de l'overlay de disponible
+            if(value === true){               
                 this.refundOverlayVisibility = true;
-            }
+            } else {
+                this.refundOverlayVisibility = !this.refundOverlayVisibility;
+            }            
+        },
+
+        /**
+         * redirection commerce
+         */
+        store(){
+            console.log(this.$route.path);
+            this.$router.push({
+                name: 'store-slug',
+                params: { slug: this.offer.store.slug }
+            });
         }
 
     }
@@ -111,14 +123,8 @@ export default {
   }
   /* bouton retiur en arriere */
   .offer__button-back{
-    position: fixed;
-    top:95px;
+    position: absolute;
+    top:5px;
     left: 5px;
-  }
-
-  @media screen and (min-width:768px) {
-    .offer__button-back{
-    left: 50%;
-    }    
   }
 </style>

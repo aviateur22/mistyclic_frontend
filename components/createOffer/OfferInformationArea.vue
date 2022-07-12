@@ -2,7 +2,7 @@
   <!-- renseignement sur l'offre -->
   <article>
     <main class="main">     
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'150'"
         :name="'budjet'"
         :type="'number'"         
@@ -10,7 +10,7 @@
         :requires="true"
       />
 
-      <input-text 
+      <FormFormComponentsInputText
         :placeHolder="'1'"
         :name="'budjet'"
         :type="'number'"         
@@ -22,10 +22,7 @@
 </template>
 
 <script>
-import InputText from '../form/InputText.vue';
 export default {
-    components: { InputText }
-
 };
 </script>
 

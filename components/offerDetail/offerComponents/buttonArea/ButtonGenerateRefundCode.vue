@@ -8,13 +8,20 @@
     </header>
     <main>
       <!-- générer un code de remboursement -->
-      <CommonButtonPrimary :text="'Générer un code'" :isRed="false" />
+      <CommonButtonPrimary @click.native="setRefundOverlayVisibility" :text="'Générer un code'" :isRed="false" />
     </main>
   </article>
 </template>
 <script>
 export default {
-
+    methods: {
+        /**
+         * Affichage génération d'un code de remboursement
+         */
+        setRefundOverlayVisibility(){
+            this.$emit('setRefundOverlayVisibility', true);      
+        }
+    }
 };
 </script>
 

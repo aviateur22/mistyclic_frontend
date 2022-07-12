@@ -5,25 +5,19 @@
     </label>
     <main>
       <!-- bouton masqué - cause design-->
-      <input ref="selectInput" style="display: none" type="file" accept="image/*" :name="name" @change="selectImage">
-      <!--Preview de l'image -->
-      <div v-if="imagePath" class="input__preview">
-        <img :src="imagePath" class="input__preview-image">
-      </div>  
+      <input ref="selectInput" style="display: none" type="file" accept="application/pdf" :name="name" @change="selectDocument">      
     </main>
     <!-- bouton de substitution -->
     <footer class="input__footer">
       <div class="input__button-container">
-        <buttonSecondary :text="'modifier'" :isRed="true" @click.native.prevent="$refs.selectInput.click()" />
+        <CommonButtonSecondary :text="'modifier'" :isRed="false" @click.native.prevent="$refs.selectInput.click()" />
       </div>      
     </footer>
   </article>
 </template>
 
 <script>
-import buttonSecondary from '../common/ButtonSecondary.vue';
 export default {
-    components: { buttonSecondary },
     props: ['name', 'text'],
     data(){
         return {
@@ -34,7 +28,7 @@ export default {
         /**
          * selection d'une image
          */
-        selectImage(){
+        selectDocument(){
             /** select file in input */           
             this.imagePath = URL.createObjectURL(this.$refs.selectInput.files[0]);
         }

@@ -13,9 +13,10 @@ export default {
 </script>
 
 <style scoped>
-  .button__action{    
+  .button__action{       
+    max-width: 768px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100%;    
   }
 </style>
