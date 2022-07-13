@@ -15,18 +15,103 @@
     --wht: #FFFFFF;
     --blk: #000000;
     --light-grn: #CADBCD;
+    --flash-grn: #00B432; 
     --yel-grn: #D8F9AF;
     --dark-gry: #525252;
     --light-gry: #474747;
-
 
     /* font-weight */
     --strong: 900;
     --bold: 700;
     --light-bold: 600;
-    
+    --normal: 500;
 
-
-
-
+    /* temps */
+    --t3ms: 0.3s
 }
+
+*{    
+    box-sizing: border-box; 
+} 
+
+/* area espacement */
+.aera--space{
+  padding-bottom: 2em;
+  border-bottom: 0.1px solid gray; 
+  margin-bottom: 2em;
+}
+
+/* input-text */
+.input{
+  display: flex;
+  flex-direction: column;
+  padding: 0.6em 0em;
+}
+
+.input__text{
+    height: 35px;
+    border: 0.5px solid var(--flash-grn);
+    border-radius: 8px;
+    padding-left: 5px ;
+    text-decoration: none;        
+    outline: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* label */
+  .input__label{
+    padding: 0.3em;
+  }
+
+  .input__label::first-letter{
+    text-transform: capitalize; 
+  }
+
+  /* filtre offre */
+  .filter{
+    padding: 0em 1em;
+  }
+
+  .filter__type-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0.5em;
+    text-transform: uppercase;
+    background: var(--wht);
+    margin: 1em 0.2em;
+    font-weight: var(--light-bold);    
+  }
+
+  .filter__name{
+    width: 100%;
+  }
+
+  /* detail d'une offre */
+  .detail--text{
+    font-size: var(--p16);
+  }
+
+  .title--header{
+    font-weight: var(--bold);
+    padding-bottom: 0.5em;
+  }
+
+  .title--header::first-letter{
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 768px) {
+    .input__label{ 
+      font-size: var(--p20);
+    }
+
+    .input__text{
+      font-size: var(--p20);
+    }
+
+    .detail--text{
+      font-size: var(--p20);
+    }
+  }
