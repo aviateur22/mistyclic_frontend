@@ -13,15 +13,15 @@
       <FormFormComponentsInputText :name="'password'" :type="'password'" :text="'votre mot de passe'" :placeHolder="'mot de passe'" :require="true" />        
 
       <!-- mote de passe confirmation -->
-      <FormFormComponentsInputText :name="'confirmPassword'" :type="'password'" :text="'confirmer votre mot de passe'" :placeHolder="'confirmation du mot de passe'" :require="true" />        
-
-      <!-- ville -->
-      <FormSFormFormComponentsSelect :name="'city'" :items="cities" :introProposal="'sélectionner votre ville'" :text="'ville'" :require="true" />
+      <FormFormComponentsInputText :name="'confirmPassword'" :type="'password'" :text="'confirmer votre mot de passe'" :placeHolder="'confirmation du mot de passe'" :require="true" />
 
       <!-- status de la société -->
       <FormFormComponentsUploadDocument :name="'doc'" :text="'status de la société'" :require="true" />
     </Form>
-    <CommonButtonSecondary :text="'je suis un particulier'" />
+    <!-- liens connexion pro -->
+    <nuxt-link class="nav__mobile-link" to="/register/client">
+      je suis un particulier
+    </nuxt-link>      
   </section>  
 </template>
 

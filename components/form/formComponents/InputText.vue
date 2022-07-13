@@ -3,14 +3,27 @@
     <label :for="name" class="input__label">
       {{ text }}
     </label>
-    <input :type="type" :name="name" :placeholder="placeHolder" min="0" class="input__text" :required="required">
+    <input v-model="value" :type="type" :name="name" :placeholder="placeHolder" min="0" class="input__text" :required="required" @click="inputUpdate" @change="inputUpdate" @keyup="inputUpdate">
   </div>
 </template>
 
 <script>
 export default {
-    props: ['name', 'type', 'text', 'placeHolder', 'required']
-
+    props: ['name', 'type', 'text', 'placeHolder', 'required'],
+    data(){
+        return {
+            //valeur de l'input
+            value: null
+        };
+    },
+    methods: {
+        /**
+         * renvoie le contenu du v-model
+         */
+        inputUpdate(){
+            this.$emit('getValue', this.value);           
+        }
+    }
 };
 </script>
 

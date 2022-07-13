@@ -1,11 +1,7 @@
 <template>
   <section class="form">
     <!-- formulaire de connexion -->
-    <Form 
-      :title="'s\'inscrire à mistyclic'" 
-      :confirmButtonText="'s\'inscrire'"
-      @clickAction="clickAction"
-    >
+    <Form :title="'s\'inscrire à mistyclic'" :confirmButtonText="'s\'inscrire'" @clickAction="clickAction">
       <!-- email -->
       <FormFormComponentsInputText :name="'email'" :type="'text'" :text="'email'" :placeHolder="'toto@hotmail.fr'" :require="true" />
 
@@ -15,10 +11,13 @@
       <!-- mote de passe confirmation -->
       <FormFormComponentsInputText :name="'confirmPassword'" :type="'password'" :text="'confirmer votre mot de passe'" :placeHolder="'confirmation du mot de passe'" :require="true" />
     </Form>
-    <CommonButtonSecondary :text="'je suis un professionnel'" />
+
+    <!-- liens connexion pro -->
+    <nuxt-link class="nav__mobile-link" to="/register/professional">
+      je suis un professionnel
+    </nuxt-link>      
   </section>  
 </template>
-
 <script>
 export default {
     methods: {

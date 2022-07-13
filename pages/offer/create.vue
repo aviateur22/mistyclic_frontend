@@ -1,12 +1,12 @@
 <template>
   <section class="form">
     <!-- formulaire de connexion -->
-    <Form :title="'mon offre'" :confirmButtonText="'valider'" :cancelButtonText="'annuler'" @clickAction="clickAction">
+    <Form :title="'mon offre'" :confirmButtonText="'valider'" :cancelButtonText="'annuler'" @clickAction="submitForm">
       <!-- renseignement offre -->
-      <CreateOfferInformationArea class="aera--space" />
+      <CreateOfferInformationArea class="aera--space" @getBudgetPrice="getBudgetPrice" @getIndividualPrice="getIndividualPrice" />
 
       <!-- conditions -->
-      <CreateOfferConditionArea class="aera--space" :conditions="conditions" />       
+      <CreateOfferConditionArea class="aera--space" :conditions="conditions" @selectCondition="selectCondition" />       
 
       <!-- info supp textarea-->      
       <FormFormComponentsTextArea class="aera--space" :text="'informations supplémentaires sur l\'offre'" />
@@ -15,15 +15,18 @@
       <FormFormComponentsUploadImage class="aera--space" :name="'image'" :text="'ajouter une photo'" />
 
       <!-- prix de l'offre -->
-      <CreateOfferPriceArea class="aera--space" />
+      <CreateOfferPriceArea :budgetPrice="budgetPrice" :price="price" class="aera--space" @getCalculatedPrice="calculatedPrice" />
     </Form>
   </section>  
 </template>
 
 <script>
 export default {
+    //verification connecté et professionnel
+    middleware: ['authenticate', 'admin'],
     data() {
         return {
+            //conditions disponible pour l'offre
             conditions: [
                 {
                     id: 1,
@@ -41,15 +44,70 @@ export default {
                     id: 4,
                     text: 'En fonction de la disponibilité du jour'
                 },
-            ]
+            ],           
+            
+            // prix offre tva + commission en %
+            price: {                    
+                tva: 20,
+                commission: 10 
+            },
+
+            //condition sélectionnée pour l'offre
+            selectedConditions: [],
+
+            //Prix global de
+            budgetPrice: 0,
+
+            //Prix calculé TVA/Commission/TTC
+            calculCulatedPrice: {}
         };
     },
     methods: {
-    /**
-     * connexion au compte
-     */
-        clickAction(data){
-            console.log(Object.fromEntries(data.entries()));            
+        /**
+         * soummission de l'offre
+         */
+        submitForm(data){
+            //ajout des conditrion d'offre
+            data.append('conditions', this.selectedConditions);
+
+            //ajout TVA
+            data.append('tva', this.calculCulatedPrice.tvaPrice);
+
+            //ajout commission
+            data.append('commission', this.calculCulatedPrice.commissionPrice);
+
+            //ajout Prix TTC calculé
+            data.append('ttc', this.calculCulatedPrice.totalPrice);
+
+            console.log(Object.fromEntries(data.entries()));
+        },
+
+        /**
+         * Rembourssement par client
+         */
+        getIndividualPrice(){
+
+        },
+
+        /**
+         * Budget total de l'offre
+         */
+        getBudgetPrice(value){
+            this.budgetPrice = value;
+        },
+        
+        /**
+         * Récupération des prix calculés
+         */
+        calculatedPrice(value){
+            this.calculCulatedPrice = value;
+        },
+
+        /**
+         * mise a jour des conditions selectionnées
+         */
+        selectCondition(conditions){
+            this.selectedConditions = conditions;
         }
     }
 

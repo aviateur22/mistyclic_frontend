@@ -35,7 +35,7 @@ export default {
 
     @media screen and (min-width: 768px) {
         .button__primary{       
-            font-size: var(--p32);
+            /* font-size: var(--p32); */
         }
     }
 </style>

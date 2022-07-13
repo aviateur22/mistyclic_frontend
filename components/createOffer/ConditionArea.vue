@@ -4,17 +4,31 @@
     <p class="condition__text">
       conditions de récupération
     </p>
-    <FormFormComponentsCheckbox v-for="(condition, i) in conditions" :key="i" :name="i" :text="condition.text" />
-  </div>
+    <FormFormComponentsCheckbox v-for="(condition) in conditions" :id="condition.id" :key="condition.id" :name="condition.id" :text="condition.text" @selectCondition="selectCondition" /> 
+  </div> 
 </template>
 
 <script>
-export default {
-    props: ['conditions'],
-    created(){
-        console.log(this.conditions);
-    }
 
+export default {
+    props: ['conditions'],  
+    data(){
+        return {
+            //tableau de conditions selectionnée
+            checkedItems: []
+        };
+    },
+    methods: {
+        /**
+         * ajout dans le tableau de la condition qui est selectionnée
+         */
+        selectCondition(condition){
+            this.checkedItems.push(condition);
+
+            //renvoi le tableau des conditions de l'offre
+            this.$emit('selectCondition', this.checkedItems);
+        }
+    }
 };
 </script>
 

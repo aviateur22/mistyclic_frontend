@@ -3,7 +3,7 @@
     <Navbar />       
     <div class="outer__container">
       <div class="inner__container">        
-        <FlashMessage />
+        <FlashMessageList />
         <nuxt />
       </div>
     </div>    

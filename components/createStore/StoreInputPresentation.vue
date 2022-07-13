@@ -28,7 +28,7 @@
 
       <FormFormComponentsInputText
         :placeHolder="'Auterive'"
-        :name="'type'"
+        :name="'city'"
         :type="'text'"         
         :text="'ville'" 
         :requires="true"
@@ -36,7 +36,7 @@
 
       <FormFormComponentsInputText
         :placeHolder="'31190'"
-        :name="'type'"
+        :name="'zip'"
         :type="'text'"         
         :text="'code postal'" 
         :requires="true"

@@ -1,24 +1,38 @@
 <template>
   <div class="checkbox">
-    <input v-model="isChecked" type="checkbox" :name="name" class="checkbox__content">
     <!-- background si active-->
-    <div v-if="isChecked" class="checkbox--color" />
+    <transition name="fade">
+      <div v-if="isChecked" class="checkbox--color" />
+    </transition>
 
     <!-- text -->
     <label :for="name" class="checkbox__label" @click="toggleButton">
+      <input v-model="isChecked" :value="name" type="checkbox" class="checkbox__content">
       {{ text }}
-    </label>    
-  </div>
+    </label> 
+  </div>  
 </template>
 
 <script>
 export default {
-    props: ['name', 'text'],
+    props: ['name', 'text', 'id'],
     data(){
         return {
             //statu de la checkbox
-            isChecked: true
+            isChecked: false,
+            conditionSelect: []
         };
+    },
+    watch: {
+        /**
+         * rempli le tableau des conditions selectionnées
+         */
+        isChecked(newValue){
+            //si condition chéckée
+            if(newValue === true){
+                this.$emit('selectCondition', this.id);
+            }
+        }
     },
     methods: {
         /**

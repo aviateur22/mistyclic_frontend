@@ -63,5 +63,8 @@ export default {
     flex-direction: column;
     width: 100%;
     background: var(--light-grn);
+    margin: 1em 0em;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 10px;
   }
 </style>
