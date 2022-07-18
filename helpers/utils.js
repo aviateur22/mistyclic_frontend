@@ -20,6 +20,10 @@ const utils = {
     storeApi: {
         createStore: { endPoint: 'api/stores'},
         updateStore: { endPoint: 'api/stores/:storeId'},        
+    },
+    //path API pour les villes
+    cityApi: {
+        getCitiesByName: { endPoint: 'api/cities/:name'}
     }
 };
 export default utils;

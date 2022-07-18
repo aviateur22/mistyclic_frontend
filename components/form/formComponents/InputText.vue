@@ -3,7 +3,18 @@
     <label :for="name" class="input__label">
       {{ text }}
     </label>
-    <input v-model="value" :type="type" :name="name" :placeholder="placeHolder" min="0" class="input__text" :required="required" @click="inputUpdate" @change="inputUpdate" @keyup="inputUpdate">
+    <input 
+      v-model="value" 
+      :type="type" 
+      :name="name" 
+      :placeholder="placeHolder" 
+      min="0" 
+      class="input__text" 
+      :required="required" 
+      @click="inputUpdate" 
+      @change="inputUpdate" 
+      @keyup="inputUpdate"    
+    >
   </div>
 </template>
 
@@ -22,6 +33,14 @@ export default {
          */
         inputUpdate(){
             this.$emit('getValue', this.value);           
+        },
+
+        /**
+         * affiche un contenu dans l'input
+         * @param {Text} data - donnée a binder avec le v-model
+         */
+        selectValue(data){
+            this.value = data
         }
     }
 };

@@ -9,7 +9,7 @@
       <option selected disabled value="">
         {{ introProposal }}
       </option>
-      <!-- liste en fonction de ce que renseigne l'ituluisateur -->
+      <!-- liste en fonction de ce que renseigne l'utilisateur -->
       <option v-for="(item) in items" :key="item.id" :name="name">
         {{ item.name }}
       </option>        

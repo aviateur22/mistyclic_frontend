@@ -9,7 +9,7 @@
     --p20: 1.3rem;
     --p16: 1rem;
 
-    /* color */
+    /* color */    
     --grn: #256100;
     --red: #FF0000;
     --wht: #FFFFFF;
@@ -19,6 +19,7 @@
     --yel-grn: #D8F9AF;
     --dark-gry: #525252;
     --light-gry: #474747;
+    --light-blue: #d6f6ff;
 
     /* font-weight */
     --strong: 900;

@@ -8,17 +8,24 @@
 
       <!-- filtrage des offres par type de ville -->
       <section>
-        <city :cities="cities" />
+        <FormFormComponentsInputWithProposal 
+          :listProposal="cities" 
+          :name="'city'" 
+          :text="'ville'" 
+          :placeHolder="'ville recherchée'" 
+          :prop="'city'"
+          @updateProposalList="updateProposalList"
+        />
+        <!-- <city :cities="cities" /> -->
       </section>
     </main>
   </article>
 </template>
 
 <script>
-import City from './components/city/City.vue';
 import Type from './components/Type.vue';
 export default {
-    components: { Type, City },
+    components: { Type },
     data(){
         return {
             // type de commerce
@@ -37,22 +44,19 @@ export default {
                 }
             ],
             // villes de disponible
-            cities: [
-                {
-                    id: 1,
-                    city: 'blagnac - 31700'
-                },
-                {
-                    id: 2,
-                    city: 'auterive - 31190'
-                },
-                {
-                    id: 3,
-                    city: 'muret - 31600'
-                }
-            ]
+            cities: []
 
         };
+    },    
+    methods: {
+        /**
+         * mise a jour des villes
+         */
+        async updateProposalList(name){
+            if(name){
+                this.cities = await this.$store.dispatch('city/getCitiesByName', name);              
+            } 
+        }
     }
 };
 </script>
