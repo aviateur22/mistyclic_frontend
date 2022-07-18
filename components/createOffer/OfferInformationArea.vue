@@ -8,7 +8,7 @@
         :name="'budget'"
         :type="'number'"         
         :text="'budget total de l\'offre en euros €'" 
-        :requires="true"                
+        :required="true"                
         @getValue="getBudgetPrice"
       />
       
@@ -18,7 +18,7 @@
         :name="'individualRefund'"
         :type="'number'"         
         :text="'remise par client en en euros €'" 
-        :requires="true"        
+        :required="true"        
       />
     </main>   
   </article>

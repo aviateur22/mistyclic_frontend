@@ -7,7 +7,7 @@ export const state = () => ({
     authenticate: true,
 
     //role utilisateur
-    role: 3,
+    role: 4,
 
     //id utilisateur
     id: 1

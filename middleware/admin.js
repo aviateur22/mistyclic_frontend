@@ -4,7 +4,7 @@
  * @param {object} redirect
  * @returns 
  */
-export default function({ store, redirect }) {    
+export default function({ store, redirect }) { 
     if(parseInt(store.state.userStatus.role, 10) < 4){    
         //ajout d'un message d'erreur
         store.commit('flashMessage/addFlashMessage', { message: 'acces interdit', error: true });
@@ -12,5 +12,4 @@ export default function({ store, redirect }) {
         //renvoie à l'accueil
         return redirect('/');
     }
-    console.log(store.state.userStatus.role);
 }

@@ -1,13 +1,13 @@
 <template>
   <article class="form">
-    <!-- titre du formaulaire -->
+    <!-- titre du formulaire -->
     <header class="form__header"> 
       <h2>
         {{ title }}
       </h2>
     </header>
     <main class="form__main" :style="{ 'backgroundImage': `url(${image})`}">     
-      <form ref="form" class="form__main-inner">
+      <form ref="form" class="form__main-inner" enctype="multipart/form-data">
         <!-- injection contenu du formulaire -->
         <slot></slot>
 

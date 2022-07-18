@@ -3,7 +3,7 @@
     <label :for="name" class="input__label">
       {{ text }}
     </label>
-    <textarea type="text" name="message" class="input__text text--area" :placeholder="placeHolder" :required="required" />
+    <textarea type="text" :name="name" class="input__text text--area" :placeholder="placeHolder" :required="required" />
   </div>
 </template>
 

@@ -2,9 +2,9 @@
  * centralisation du trycatch pour les actions
  */
 export const actions = {
-    /**
-     * centralsation de TryCatch
-     */
+/**
+ * centralsation de TryCatch
+ */
     async wrapperAction(state, payload){
         try {
             /**             
@@ -17,8 +17,8 @@ export const actions = {
             /**
              * Erreur coté client
              */
-            if(!err.response?.data){  
-                return state.commit('flashMessage/addFlashMessage', { message: 'oupsss', error: true }, {root: true});
+            if(!err.response?.data){                
+                return state.commit('flashMessage/addFlashMessage', { message: err, error: true }, { root: true });
             }
             /**
              * Erreur coté API - statusCode > 400
